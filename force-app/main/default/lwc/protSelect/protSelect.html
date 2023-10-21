@@ -1,0 +1,39 @@
+<template>
+    <div>ゆきの暇</div>
+    <div style="height: 250px; overflow: scroll">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+          <thead>
+            <template for:each={tableHead} for:item="item" for:index="index">
+                <th scope="col" key={item.key}>
+                    <div class="slds-truncate">{item}</div>
+                </th>
+            </template>
+          </thead>
+          <tbody>
+            <template for:each={dataList} for:item="list" for:index="index">
+                <tr class="slds-hint-parent" key={Id}>
+                    <template for:each={list} for:item="item" for:index="index">
+                        <th scope="col" key={item.key}>
+                            <lightning-combobox
+                                value={item}
+                                placeholder="Select Progress"
+                                options={options}></lightning-combobox>
+                        </th>
+                    </template>
+                </tr>
+            </template>
+          </tbody>
+          <tbody>
+            <template for:each={dataList} for:item="list" for:index="index">
+                <tr class="slds-hint-parent" key={Id}>
+                    <template for:each={list} for:item="item" for:index="index">
+                        <th scope="col" key={item.key}>
+                            
+                        </th>
+                    </template>
+                </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+</template>

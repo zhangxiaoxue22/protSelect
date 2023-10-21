@@ -1,0 +1,32 @@
+.my-container {
+  position: relative;
+}
+.my-dropdown {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 3.5rem;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(((1rem * 1.5) + 1rem) * 5);
+  overflow-y: auto;
+  z-index: 7000;
+  min-width: 6rem;
+  max-width: 20rem;
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.slds-is-open .my-dropdown{
+  display: block;
+}
+.slds-has-error .slds-combobox__input {
+  border-color: var(--slds-g-color-error-base-40, #ea001e);
+}
+.no-event{
+  pointer-events: none;
+}
