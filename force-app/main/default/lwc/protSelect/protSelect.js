@@ -1,6 +1,7 @@
 import { LightningElement, track } from 'lwc';
 
 export default class ProtSelect extends LightningElement {
+    @track load = false
     @track tableHead = ['eating', 'singing', 'sleeping', 'sports', 'game'];
     @track dataList = [
         ['1h', '2h', '3h', '4h', '2h'],
@@ -8,6 +9,8 @@ export default class ProtSelect extends LightningElement {
         ['1h', '4h', '2h', '4h', '2h'],
         ['4h', '1h', '4h', '4h', '1h'],
         ['1h', '2h', '2h', '1h', '1h'],
+        ['3h', '2h', '4h', '1h', '1h'],
+        ['2h', '3h', '2h', '1h', '1h'],
     ];
     get options() {
         return [
@@ -16,5 +19,8 @@ export default class ProtSelect extends LightningElement {
             {label:'3h', value:'3h'},
             {label:'4h', value:'4h'}
         ];
+    }
+    handleClick() {
+        this.load = !this.load
     }
 }

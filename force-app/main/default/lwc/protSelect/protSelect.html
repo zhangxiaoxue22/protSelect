@@ -1,5 +1,8 @@
 <template>
     <div>ゆきの暇</div>
+    <div>
+        <lightning-button variant="brand-outline" label="変更" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
     <div style="height: 250px; overflow: scroll">
         <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
           <thead>
@@ -14,26 +17,22 @@
                 <tr class="slds-hint-parent" key={Id}>
                     <template for:each={list} for:item="item" for:index="index">
                         <th scope="col" key={item.key}>
-                            <lightning-combobox
-                                value={item}
-                                placeholder="Select Progress"
-                                options={options}></lightning-combobox>
-                        </th>
-                    </template>
-                </tr>
-            </template>
-          </tbody>
-          <tbody>
-            <template for:each={dataList} for:item="list" for:index="index">
-                <tr class="slds-hint-parent" key={Id}>
-                    <template for:each={list} for:item="item" for:index="index">
-                        <th scope="col" key={item.key}>
-                            
+                            <template if:false={load}>
+                                <lightning-combobox
+                                    value={item}
+                                    placeholder="Select Progress"
+                                    options={options}></lightning-combobox>
+                            </template>
+                            <template if:true={load}>
+                                <c-com-select
+                                    value={item}
+                                    options={options}></c-com-select>
+                            </template>
                         </th>
                     </template>
                 </tr>
             </template>
           </tbody>
         </table>
-      </div>
+    </div>
 </template>
